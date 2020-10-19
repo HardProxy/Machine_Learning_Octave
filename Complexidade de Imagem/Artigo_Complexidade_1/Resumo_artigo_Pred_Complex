@@ -1,0 +1,163 @@
+- ** Predicting Complexity Perception of Real World Images ** -
+
+- Complexidade de Imagens.
+- Extração de características (aplicabilidade na experiencia do usuário em sites)
+- Advanced Rendering Algorithms (Reconstruções de Imagens em 3D)
+- Semelhança entre imagens.
+- Neurociência, mecanismos de reconhecimento, aprendizado e memorização.
+
+- Complexidade de um objeto é o menor peso que um programa pode reconstruir o objeto a partir de características/ parâmentros fundamentais.
+- Não é apenas influenciado por propriedades espaciais mas também propriedades temporais.
+- Pode ser descrito por diferentes modelos matemáticos.
+
+** Features Congestion / Subband Entropy (PDF's).
+
+As características podem ser relacionadas a:
+ - Características espaciais.
+ - Frequência espacial de características.
+ - Combinação de propriedades espaciais e de Fourier.
+ - Quantidade de objetos.
+ - Abertura.
+ - Simetria de organização.
+ - Variedade de cores.
+ - Variação de intensidade.
+ - Tamanho do arquivo.
+ - Contraste focal.
+ 
+ - Experimento 1 =
+ 
+ * 49 imagens do mundo real (Data Base = RS1)
+ 
+ - Experimento 2 = 
+  
+ * 49 imagens do mundo real (Data Base = RS2)
+ 
+ - Experimento 3 = 
+
+ * 54 texturas de imagens reais (Data Base = TXT1), total de 864 imagens divididos em 54 classes de objetos naturais ou cenas capturadas sob condições nao controladas.
+
+ - Foram usadas texturas de imagens vindas de Raw Food Texture base de dados (RawFooT), incluindo 68 tipos de texturas de comidas sob 46 de condições de luz.
+ 
+ - Experimento 4 =
+ 
+ * 58 texturas de imagens (Data base = TXT2)
+ 
+ - Os testes foram feitos em estudantes, pesquisadores e funcionarios administrativos.(Acima de 18 anos).
+ - Estimativas de problemas visuais dos participantes (six Ishihara tables), foram rejeitados participantes que nao reportaram corretamente nenhuma das seis tabelas.
+ - Foi utilizado uma interface digital que permite o usuário a julgar [0:100] a complexidade da imagem , também foi permitido alterar o contraste da tela a fim de melhorar a observação de detalhes da imagem.
+ 
+ ** ( NAO FOI DADO UM TEMPO LIMITE TANTO PARA A RESPOSTA QUANTO PARA SUBMETER OS RESULTADOS) ** -> O ponteiro retorna sempre ao meio da escala. Antes de começar os testes foram feitos testes iniciais nao contabilizados que serviram como fase de acostumar com a interface digital.
+ 
+ - Foram calculador um valor médio de pontuação para cada participante.
+ 
+ - Standard deviation of the complexity => valor médio da complexidade sobre todas as imagens ranqueadas. 
+ - Outlier detection => valores médios fora de um intervalo de dois vezes o valor médio de complexidade foram descartados.
+  
+ ** (Proposição de um comportamento linear da complexidade )  **
+  
+ _ ** Particle Swarm Optimization ** _
+
+ - Algoritmo que utiliza populações para otimizar baseado determinados parâmetros em tecnicas estocásticas de otimização.
+ - Inicialmente uma população é inicializada de maneira aleatória para que seja resolvido o problema neste mesmo momento uma estrutura de comunicação é definida (Assimilação entre o indivíduo e seus vizinhos ). Cada indivíduo é um candidato de solução assim como um conjunto deles também é. As partículas são iterativamente dadas valor a fim de minimizar o candidato à solução, lembrando sua localização que obteve melhor sucesso. A solução individual que obtiver o melhor sucesso é chamada de "Best Particle". Cada partícula transmite tal informação para seus vizinhos fazendo com que seus vizinhos também tenham chance de obter sucesso.
+
+ - Tipicamente as partículas sao modeladas num espaço multidimensional, esse espaço tem posição e velocidade. 
+
+ _ ** Pearson Correlation Coefficient (PCC) ** _
+
+ - Utiliza a função logistica para obter melhor rendimento do tal hipótese.
+
+ - Observação sobre o overfitting e a possibilidade da necessidade da Regularização.
+
+ - FEATURE CONGESTION = três mapas de desordem para a imagem, represetado a cor, textura e a orientação de congestionamento. (Erros na visualização de detalhes devido ao posicionamento da captador da imagem).
+
+ - SUBBAND ENTROPY = Está relacionado com o numero de bits necessários para a subanda do código. Depois de decompor a luminancia ( canal de escalas de cinza) e chominancia (canal de RGB) para wavelet subbands, a entropia é computada dentro de cada faixa, e uma soma ponderada dessas entropias é proposta como medida de desordem.
+
+ _ ** Features ** _
+
+ Os features utilizados foram implementados de maneira linear. Essas features utilizadas foram usadas devido ao peso na literatura ou que poderiam estar relacionados com a medida da complexidade das imagens. A seis primeiras características levadas em consideração sao computadas por meio da escala dequan cinza sem levar em conta a informação das cores.
+
+Os métodos Features de 1 até 4 foram propriedades medias com Gray Level Co-occourrence Matrix (GLCM). A função MATLAB foi graycoprops.
+
+Referencia = Corchs S, Gasparini F, Schettini R. Grouping strategies to improve the correlation between subjective and objective image quality data. In: IS&T/SPIE Electronic Imaging. International Society for Optics and Photonics; 2013. p. 86530D–86530D. (PESQUISAR)  
+
+
+
+  - Features (Contraste, Correlação, Energia, Homogeniedade, Fator de Frequencia( ref 53), Densidade de Borda ( ref 27 ), Relação de Compressão ( ref 54 ), Número de Regiões ( ref 55 ), Coloração ( ref 56 ), Numero de Cores ( ref 57 ), Harmonia de cores ( ref 58/57 )).
+
+ _ ** RESUTADOS ** _
+
+ 
+ Experimento 1 => Rodaram 1000 vezes o PSO( Particle swarm Optimization ), normalizado. Para cada uma delas foram tirados os PCC ( Pearson Correlation Coefficient = fator que previne o overfitting) e depois feito a média. Pegaram a média dos coeficientes obtidos no PSO.
+ 
+ (Analisar os gráficos)
+ 
+ - Sinal dos coeficientes obtidos -> Como cada medida relaciona-se com as algumas relações subjetivas.
+ - Validação de eficiencia verificando a hipotese, FC e SE.
+ 
+ 
+ Experimento 2 => Também utiliza a média dos scores como forma de comparação. Comparação da hipotese linear com o FC e SE. 
+ 
+ (Analisar gráficos) -> Para os features Numero de regiões, Compression Ratio e para homogeniedade a hipotese é uma boa escolha.
+
+ Fatores que afetam a complexidade do objeto segundo perguntado para as pessoas do experimento, a qualidade dos objetos, os detalhes e as cores sao determinantes.
+
+
+Experimento 3 => Fizeram o mesmo teste mas só que com texturas. Perda de perfomance quando comparado com imagens do mundo real junto dos fatores FC e SE. Assim como nos outros experimentos foram feitos as otimizações dos coeficientes da hipotese linear(média das 1000 corridas). 
+
+Em texturas a hipotese linear foi muito boa.
+
+Fatores que podem interferir no score da complexidade (Regularidade e Understandability)
+
+Experimento 4 =>  Mesma coisa do experimento 3 porem mudando as texturas(mais imagens).
+
+ _ ** Discussao ** _
+ 
+ Observações de que alguns objetos e cenas sao tidas como menos complexas, enquanto que contruções à mão e ruas com contruções são tidas como mais complexas.  
+
+ Observações que muitos fatores tido como determinantes na literatura tbm foram observados como diferenciais no experimento (Quantidade de detalhes, understandibility e familiaridade) assim como conceitos de clutter, simetria, espaço aberto, organização e contraste.
+ 
+ É possível relacionar as características definidas como determinantes aos features de numero de regioes (quantidade de objetos) , nnumero de cores (detalhes) e densidade de borda (cores).
+ 
+ Quantidade de objetos, detalhes, cores, ordem, regularidade estam relacionados a mecanismos cognitivos.
+ 
+ ***** The description order and regularity can be in correspondence with the visual clutter measures FC and SE. While quantity of objects, details and colors and order and regularity can be associated to bottom-up cognitive mechanisms, understandability and familiarity that play also an important role, are clearly related to top-down processes and none of the considered measures alone is able to capture these concepts. Moreover, several observers have reported both types of criteria (bottom-up and top-down), confirming that bottom-up and top-down mechanisms interfere in perception. (MUITO IMPORTANTE). 
+ 
+ Em relação àss texturas, aquelas que tinham simetria fora julgadas menos complexas do que aquelas com msimetria nao aparente. (Relação esperada obtida por outros pesquisadores [ref 36 ]).
+ 
+ Resaltaram a importância da descrição verbal das imagens para o experimento, pois a regulabilidade (60 % disseram que é um fator determinante) e compreensibilidade (47 % ) para os testes em texturas. Para testes em imagens do mundo real, tal fator nao foi tao relevante, em torno de 20% dos entrevistados acharam isso de grande relevancia, resultado esperado [ref 25] . 
+ 
+ Diferença na percepção de complexidade entre imagens de texturas está diretamente relacionada com a ordem de importancia do criterio reportado pela descrição verbal. A compreensibilidade é uma fator presente em ambas situações( imagens reais e texturas), pois segundo o artigo os entrevistados prestam mais atenção quando a compreensibilidade é mais evidente.
+ 
+ Possibilidade de mudança de medidade de complexidade ao inves de 0:100 outros pesquisadores sugeriram baixa, média e alta complexidade (acho muito mais conveniente) aplicado ao deep learning. 
+ 
+ Já fizeram testes com hieróglifos e pinturas (outros pesquisadores).
+ 
+ Quais fatores interferem na percepção da complexidade da imagem ? 
+ 
+ _ ** Conclusoes ** _
+ 
+ Multidimensionalidade da complexidade.
+ A linearidade funciona para alguns features utilizados no experimento.
+ 
+ - Pretendem misturas imagens reais com texturas e aplicar SVM e programção genetica relacionando diferentes modalidades de propriedades visuais.
+ 
+ 
+ OBTENCAO DE DADOS => 	
+ 
+ Texturas 
+  
+ usermane : rawfoot
+ passsword : dbtexture
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

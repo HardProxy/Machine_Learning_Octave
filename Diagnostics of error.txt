@@ -1,0 +1,19 @@
+- O aumento do erro de maneira que se aumentarmos a quantidade de dados analisados não corresponde aos valores esperados
+faz com que haja a necessidade de uma mudança na utilização das tecnicas implementadas. Um dos possíveis métodos de melho-
+ra de resultado é a adição de novas características(x_1, x_2, ...) e suas interrelações(x_1 * x_2 , (x_1)^2 * (x_2)^2, ...).
+
+- Validação de hipóteses : 
+
+ - Separação entre training set (70 por centro dos dados em geral) e test set, esoclhidos de maneira aleatória.
+
+_Model Selection_
+
+- Graus de um polinômio : aplicar diferentes graus de polinomio no training test e depois disso verificar o theta obtido 
+na mesma função custo porém aplicada ao cross-validation. Depois de aplicado à cross-validation , pegamos polinomio de grau 
+que melhor minimiza o erro para que seja aplciado ao test set. 
+
+_Tipo de Erros de Generalização_
+
+- Bias: falhas na descrição dos dados amostrais.
+
+- Variance: Alta complexidade na descrição dos dados amostrais.

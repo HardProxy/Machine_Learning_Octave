@@ -1,0 +1,28 @@
+1 Parte( Notação e eficiencia)
+
+- Notação = X_i = (x_0, x_1, x_2, ..., x_m) , Y_i = (y) (valor real) e 
+W = (w_0, w_1,w_2, ..., w_m). Minha hipotese é h_n(x) = X*W
+(No meu programa eu chamei W de theta)
+
+m = numero de parâmetros da sua hipotese
+N = Número de dados
+
+- Melhor Hipótese (Exemplo da Identificação de Números)
+- E_in tracks E_out (Ambos são funções da quantidade de iterações)
+- Convergência do Perceptron
+
+
+2 Parte (Regressão Linear e Aplicação na Classificação)
+
+- Regressão Linear
+- Quantificação do Erro (Erro quadrático) E_in(W) = 1/N sum[( X*W - Y)^2]
+- Gradiente de E_in(W) = 2/N X_{tranpose}(X*W - Y) = 0
+- Resolução por Gradiente decrescente (Algo parecido com oque o PLA faz) ou W = X_{dagger}*Y 
+ - X_{dagger} = (X_{transpose}*X)^{-1} * X_{transpose}
+- Para a classificação usamos a Regressão Linear para um bom valor inicial de W e depois aplicamos o PLA. Ou seja, aplicamos a função sign fora da regressão linear.
+- Quando vc nao está usando dados linearmente separáveis porém podemos aplicar transformações que fazem com que tal problema seja linearmente separáveis no espaço da troca de variáveis.
+
+3 Parte (Interpretação Probabilistica)
+- Gaussiana
+- Likelihood = 
+- Teorema do Valor Central

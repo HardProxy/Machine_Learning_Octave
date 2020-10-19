@@ -1,0 +1,42 @@
+Linear Model 1 -
+
+- Um dos modelos mais importantes no deep learning(Aplicações nas Telecomunições na ativação e desativação de serviços, na área de Engenharia florestal na estimativa de crescimento de plantas )
+- Função target é uma função real(Contínua)
+- Numa situação real nós encontramos raramente dados linearmente separáveis, diferentemente da hipótese inicial do percetron, por isso, muitas vezes, é necessário generalizar, por exemplo, na identificação de digitos e ou objetos em uma foto.
+- Já que temos uma entrada com valores que podem não significativos é fundamental extrair as informações useful(Aproveitáveis). Na identificação de objetos numa imagem é fundamental a observação de n o quão simétrico é o objeto e caso haja a possibilidade de comparação com outros objetos observar a intensidade das cores presentes na imagem.
+- x = (x_0, x_1, x_2, ..., x_n) de forma geral. 
+- A aplicação do PLA(Perceptron Learning Algorithm) é apenas nos perfis (valores iniciais) caso os dados nao sejam linearmente separáveis o Perceptron nao converge para a hipotese de melhor desempenho(Ele nunca irá convergir para apenas uma hipotese). Como existem poucos graus de liberdade no algoritmo entao o E_out segue o E_in. No perceptron o E_in e o E_out são funções de suas iterações.
+
+-Linear Regression
+
+- Muito usado em estatistica e na economia. Como no perceptron temos uma forma linear de realizar cálculos, porém o output nao é binario mas sim um valor real.
+
+- Quantificar o error, o quao bom sua hipotese aproxima a target function. O algoritmo tenta minimizar o erro a cada iteração. 
+- Square Error, "Minimização da Distância"  
+		Error = (h_n(x)- y_n)^2 
+
+- E_in = 1/n sum(h_n(x)- y_n)^2
+- Gradiente de E_in(w) = 2/N X_{transpose}(Xw - y) = 0
+- Gaussianas, likelihood, Teorema do Valor Central
+- Pseudo-Inverse X^(dagger): 
+-Linear Regression for classification = aplica a regressao linear primeiro e depois aplica ao perceptron, pois é um bom chute inicial, ao inves de começar com valores randômicos.
+- Uma mudança de coordenadas pode transformar uma problema nao linear em um problema linearmente separável.
+- APLICAÇÃO EM REDES NEUTRAIS (MUITOS PERCEPTRONS INTERLIGADOS).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

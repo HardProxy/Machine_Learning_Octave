@@ -1,0 +1,96 @@
+_ ** Introdução ** _
+
+- Fundamentação bibliográfica dos features na aplicação da complexidade de imagens.
+- Relação afetiva com a medida de complexidade de imagens.
+- Peso de um features para a descrição da complexidade de imagens.
+- Aplicações na arquitetura, propagandas, sites, aplicativos de navegação para veículos.
+- Ligação entre complexidade e suas preferências(Berlyne)
+
+- Aspectos que podem interferir na complexidade : regularidade, numero de elementos, heterogeniedade e a irregularidade das formas.(Berlyne)
+
+- Os resultados estam altamente relacionadas ao modo que a complexidade é definida, manipulada e medida.
+
+_ ** Medidade de complexidade ** _
+
+- A percepção não é um reflexo direto, ele é inerente ao estimulo visual.(Attneave). Fazendo com que em um estímulo seja passado diversas informações, que podem variar. Mudando a aparente complexidade.
+
+- A percepção é um processo construtivo (Associação entre informações sensoriais e a percepão de mundo que ao trabalharem juntos para que a imagem tenha significado).
+
+- Conceitos como a de complexidade (Subjetivos) são construídos por meio de relações entre as propriedades físicas e estáticas do estímulo. (Berlyne)
+
+- Um padrão pode ser mais complexo ou ambiguo para uma pessoa do que para outra. Ou até mesmo para a mesma pessoa
+em diferentes momentos.
+
+- #Vantagens : A aplicação computacional de métodos para o cálculo de complexidade visual já que isso pode possibilitar pesquisas e antecipar resposta afetivas a produtos, paginas da web e arquiteturas. Além disso salvaria tempo e custos para testes de pós-produção. 
+
+- #Desvantagens : O cálculo pode ser confundido por causa da familiaridade e estilo. É viável apenas para imagens que tenham sido produzidas. Não permite previsões de complexidade durante o planejamento ou desenvolvimento.
+
+- In short, this teory postulates that the minimum length of the code required to describe a visual image constitutes a good measure o its complexity. In 2003 Donderi showed  that compressed file size was a good approximation to this minimum length.
+
+- The use of fractal compression is correlated almost linearity.
+
+_ ** Edge Detection ** _
+
+- Edges usually indicate changes in depth, orientation, illumination, material, object boundaries, and so no. As such, edge detection is vital for human and computer vision. 
+
+- #Parameters = quantity and their distribution
+
+- #Pixels estimation of edge representation = considereing the average colour of the image resulting from the edge detection step.
+
+_ ** Complexity and Compression ** _
+
+
+- As noções de complexidade foram expressadas formalmente por Andrey Kolmogorov que introduziu a noção de descrever a complexidade. A complexidade de Kolmogorov, k(x), de um objeto, x, é o tamanho do minimo do programa que descreve x. Tal complexidade não é computável, enquanto pra alguns objetos especificos é viável para um objeto generico é impossível de se calcular em um tempo finito.
+
+-- Definição retirada do wikipedia, Complexidade Kolmogorov
+
+"A complexidade de Kolmogorov é uma teoria da informação e da aleatoriedade, profunda e sofisticada, que trata da quantidade de informação de objetos individuais, medida através do tamanho de sua menor descrição algorítmica. Ela é uma noção moderna de aleatoriedade, e refere-se a um conceito pontual de aleatoriedade, ao invés de uma aleatoriedade média como o faz a teoria das probabilidades. Ela é um ramo derivado da teoria da informação de Claude Shannon, embora hoje possa ser considerada uma área de pesquisa madura e autônoma. " 
+
+- A Teoria Estrutural da Informação, desenvolvida em paralelo e independentemente com a Teoria Algoritmica da Informação, é a essencia teórica da percepção visual humana. Isso pode ser uma formalização do Principio da Navalha de Occam : a melhor hipotese para um conjunto de dados é a descrição mais simples. 
+
+- As diferenças entre SIT e AIT,
+
+    1) SIT distingue entre informalções métrica e estruturais.
+    2) O resultado da SIT é a orgnaização hierarquicas enquanto as saidas de K(x) é o valor da complexidade.
+    3) SIT é focada num conjunto restrito de regularidades enquanto AIT considera todas as possibilidades.
+    4) SIT é computavel enquanto K(x) não.
+
+- Ainda é um problema em aberto a conversão entre pixels e a descrição simbolica adequada para aplicação da SIT.
+
+- Tecnicas de Compressão utilizadas no paper JPEG e fractal.
+
+- #PORQUE USAR TAIS TECNICAS ? 
+
+ - O formato JPEG foi criado com o fato de que a visão humana é muito mais sensível a variações pequenas em largas   
+   areas.
+ - O algortimo de compressão JPEG traz vantagens para cenas de compressão local. 
+ - A compressao fractal das proprias similaridades da imagem. A imagem é particionadas em termos mais simples e 
+   busca semelhanças em outras partes da imagem além de suas transformações( rolatação, ajuste de brilho, etc). 
+   Tomando vantagens assim em informações estruturais de alto nível e regularidades nao locais. Ou seja busca
+   caracteristicas de simetria, repetições e ritmo.
+
+_** Estimativas de Entropia pela lei de Zipf **_
+
+ - Fenomeno segue a distribuição de Zipf que a frquencia de ocorrencia é inversamente proporcional ao seu rank.
+
+_ ** Previsao da complexidade da imagem usando ANN **_
+
+- Procedimento : Usar as ANN para aumentar os resultados apresentados por metodos que utilizam correlações entre humanos.
+
+- A ANN nao vê as imagens mas tem acesso às estimativas correpondentes computacional da complexidade visual.
+- Foram testadas diferentes caracteristicas e configurações de neuronios. 
+- A ANN minimiza o erro quadrático nao a correlação.
+
+
+##Resultados##
+
+- O canal de saturação é o mais significativo se comparado com Hue e Value.
+- Separação em 3 configurações de inputs; 
+    => NET1: Todas as informações (filtros de borda, media, desvio padrao, estimativa de complexidade, etc). Teve uma boa correlação e um baixo     
+             erro.
+    => NET2: Tudo menos o filtro de bordas. Os resultados foram ligeiramente piores, mostrando que é possível 
+             retirar informações significativas do filtro de bordas.
+    => NET3: Só medias, filtros e desvio padrao. Os resultados foram comparáveis ao da NET2.
+
+
+

@@ -1,0 +1,46 @@
+%% Visao Computacional %% A funcao adapthisteq nao existe no octave
+
+Aula 1:
+- Extração de Informações a partir de imagens relacionando-as com ourtas já vistas.
+
+- Aplicações : Aprendizado de maquina, processamento de imagens, sistemas cognitivos e neurociencia.
+
+Aula 2:
+
+- Funcionamento do Olho Humano.
+
+Aula 3 :
+
+- Aquisicao, processamento(Retirar ruidos, suavisar), segmentacao (particionar a imagem em situacoes de interesse), analise, reconhecimento ...
+
+
+Aula 4 :
+
+- Historia
+
+Aula 5:
+
+-Aquisicao : Pixels(Valor numerico que representa as gradacoes de tonalidade da imagem).
+- Escala de Cinza, RGB (Cada pixel contem 3 informacoes )
+- Vizinhaca de Pixels (Horizontal, vertical e diagonais)
+-Distancia entre pixels : 
+
+  	*City Block = Andamento somente nas verticais e horizontais => D(p1,p2) = |Delta X| + |Delta Y|
+
+	*Euclidiana = raiz( (delta x)^2 + (delta y)^2) - Diagonais
+
+	*Chess Board = max(delta x, delta y) - > Vizinhanca de Oito
+
+Aula 6 : 
+
+- Operacoes ponto a ponto : 
+
+	*Ajustes de brilho, identificacao de movimento
+
+- Tipos : Lineares e nao lineares -> Log, exp , etc ...
+
+Aula 7 : 
+
+
+
+	
